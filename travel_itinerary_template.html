@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>杭州到齐云山自驾游行程</title>
+	<style>
+		/* 全局样式 */
+		:root {
+			--primary-color: #3498db;
+			--secondary-color: #2ecc71;
+			--accent-color: #f39c12;
+			--text-color: #333;
+			--light-gray: #f5f5f5;
+			--border-color: #e0e0e0;
+			--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
+		}
+
+		body {
+			background-color: #f9f9f9;
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		/* A4纸张样式 */
+		.page {
+			width: 210mm;
+			min-height: 297mm;
+			padding: 20mm;
+			margin: 10mm auto;
+			background: white;
+			box-shadow: var(--shadow);
+			position: relative;
+		}
+
+		/* 页眉 */
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 15mm;
+			padding-bottom: 5mm;
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+			color: var(--primary-color);
+		}
+
+		.trip-title {
+			font-size: 28px;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: 10mm;
+			color: var(--primary-color);
+		}
+
+		/* 行程概览 */
+		.overview {
+			background-color: var(--light-gray);
+			padding: 15px;
+			border-radius: 8px;
+			margin-bottom: 15px;
+		}
+
+		.overview h2 {
+			color: var(--primary-color);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+
+		.overview-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 15px;
+		}
+
+		.overview-item {
+			display: flex;
+			align-items: center;
+		}
+
+		.overview-item i {
+			margin-right: 10px;
+			color: var(--accent-color);
+			font-size: 18px;
+		}
+
+		/* 详细行程 */
+		.itinerary {
+			margin-bottom: 15px;
+		}
+
+		.day {
+			margin-bottom: 20px;
+		}
+
+		.day-header {
+			background-color: var(--primary-color);
+			color: white;
+			padding: 10px 15px;
+			border-radius: 8px 8px 0 0;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.day-content {
+			border: 1px solid var(--border-color);
+			border-top: none;
+			border-radius: 0 0 8px 8px;
+			padding: 15px;
+		}
+
+		.activity {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px dashed var(--border-color);
+		}
+
+		.activity:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.time {
+			font-weight: bold;
+			color: var(--primary-color);
+			margin-right: 10px;
+		}
+
+		.activity-title {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		.activity-details {
+			padding-left: 20px;
+		}
+
+		.activity-details ul {
+			padding-left: 20px;
+		}
+
+		/* 注意事项 */
+		.notes {
+			background-color: #fff8e1;
+			border-left: 4px solid var(--accent-color);
+			padding: 15px;
+			margin-bottom: 15px;
+			border-radius: 0 8px 8px 0;
+		}
+
+		.notes h2 {
+			color: var(--accent-color);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+
+		/* 地图 */
+		.map {
+			height: 200px;
+			background-color: var(--light-gray);
+			margin-bottom: 15px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #888;
+		}
+
+		/* 页脚 */
+		.footer {
+			margin-top: 15mm;
+			padding-top: 5mm;
+			border-top: 1px solid var(--border-color);
+			text-align: center;
+			font-size: 12px;
+			color: #888;
+		}
+
+		/* 打印按钮 */
+		.print-button {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 30px;
+			cursor: pointer;
+			font-size: 16px;
+			display: flex;
+			align-items: center;
+			box-shadow: var(--shadow);
+			transition: all 0.3s ease;
+		}
+
+		.print-button:hover {
+			background-color: #2980b9;
+			transform: translateY(-2px);
+		}
+
+		.print-icon {
+			margin-right: 8px;
+		}
+
+		/* 打印样式 */
+		@media print {
+			body {
+				background: none;
+			}
+
+			.page {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				padding: 15mm;
+				box-shadow: none;
+			}
+
+			.print-button {
+				display: none;
+			}
+		}
+
+		/* 响应式设计 */
+		@media (max-width: 210mm) {
+			.page {
+				width: 100%;
+				margin: 0;
+				padding: 15px;
+			}
+
+			.overview-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+	<!-- 引入Font Awesome图标库 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+	<div class="page">
+		<div class="header">
+			<div class="logo">旅游指南</div>
+			<div class="date">2025年8月22日 - 8月24日</div>
+		</div>
+
+		<h1 class="trip-title">杭州到齐云山自驾游行程</h1>
+
+		<div class="overview">
+			<h2><i class="fas fa-info-circle"></i> 行程概览</h2>
+			<div class="overview-grid">
+				<div class="overview-item">
+					<i class="fas fa-calendar-alt"></i>
+					<span>日期: 2025年8月22日至24日（周五至周日）</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-car"></i>
+					<span>出行方式: 自驾</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-map-marker-alt"></i>
+					<span>目的地: 安徽省黄山市休宁县齐云山</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-cloud-sun-rain"></i>
+					<span>天气: 小雨转多云，气温24-35℃</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="itinerary">
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第一天（8月22日 周五）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">18:00</span> 杭州出发，走高速路线
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>路线：杭州 → 沿G56杭瑞高速 → G3京台高速 → 齐云大道 → 齐云山</li>
+								<li>总距离：约243公里</li>
+								<li>预计行驶时间：约3小时15分钟</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">21:30</span> 抵达齐云山，入住酒店
+						</div>
+						<div class="activity-details">
+							<p>推荐住宿：</p>
+							<ul>
+								<li><strong>齐云山白岳度假酒店</strong>：位于景区索道北侧齐云小镇入口处</li>
+								<li><strong>齐云山祥富瑞度假酒店</strong>：位于齐云山镇岩前村</li>
+								<li><strong>景区内客栈</strong>：如需体验景区内住宿，可选择月华街上的客栈，如齐云山三天门客栈、齐云山天官府客栈等
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第二天（8月23日 周六）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-17:00</span> 游览齐云山景区（AAAA级景区）
+						</div>
+						<div class="activity-details">
+							<p>景区开放时间：8:00-18:00（7-8月）</p>
+							<p>主要景点游览路线：</p>
+							<ol>
+								<li>一天门 → 二天门 → 三天门（景区主要入口路线）</li>
+								<li>月华天街（景区主要商业街，有多家特色客栈）</li>
+								<li>香炉峰（齐云山标志性景点）</li>
+								<li>小壶天（景区精华景点）</li>
+								<li>真仙洞府 → 象鼻岩 → 寿字岩（自然景观区）</li>
+								<li>勅建玄天太素宫、财神殿、元辰殿（道教文化区）</li>
+								<li>碧莲池（景区内休憩好去处）</li>
+							</ol>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:00</span> 午餐
+						</div>
+						<div class="activity-details">
+							<p>可在月华天街用餐，或选择景区内的农家乐</p>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">17:00</span> 返回住宿地休息
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第三天（8月24日 周日）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-11:00</span> 继续游览齐云山未游览完的景点
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">11:00</span> 退房，准备返程
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:00</span> 从齐云山出发返回杭州，走国道路线
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>建议路线：齐云山 → 沿237国道 → 黄山市 → 宁国市 → 湖州市 → 杭州</li>
+								<li>总距离：约260公里</li>
+								<li>预计行驶时间：约5-6小时（国道行驶速度较慢）</li>
+								<li>预计到达时间：17:00-18:00</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="notes">
+			<h2><i class="fas fa-exclamation-triangle"></i> 注意事项</h2>
+			<ol>
+				<li>
+					<strong>行前准备：</strong>
+					<ul>
+						<li>检查车辆状况，确保适合长途行驶</li>
+						<li>提前预订住宿，特别是周末可能比较紧张</li>
+						<li>准备雨具，8月22-23日有小雨天气</li>
+						<li>带好防晒和防蚊虫用品</li>
+					</ul>
+				</li>
+				<li>
+					<strong>景区游览：</strong>
+					<ul>
+						<li>齐云山景区面积较大，建议穿舒适的鞋子</li>
+						<li>可考虑乘坐索道节省体力（月华索道）</li>
+						<li>景区内有竹筏项目，运营时间9:00-17:30</li>
+					</ul>
+				</li>
+				<li>
+					<strong>返程路线：</strong>
+					<ul>
+						<li>国道路线虽然时间较长，但沿途风景优美</li>
+						<li>建议提前规划好休息点，国道上可以适当停车欣赏风景</li>
+						<li>注意国道限速和交通规则</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+		<div class="map">
+			<i class="fas fa-map-marked-alt"></i> 地图将在打印前显示
+		</div>
+
+		<div class="footer">
+			<p>© 2025 旅游指南 | 行程规划日期：2025年8月</p>
+			<p>本行程单仅供参考，实际行程可能因天气、交通等因素有所调整</p>
+		</div>
+	</div>
+
+	<button class="print-button" onclick="window.print()">
+		<i class="fas fa-print print-icon"></i> 打印行程
+	</button>
+
+	<script>
+		// 可以在这里添加更多交互功能，如动态加载地图、天气更新等
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log('行程单加载完成');
+			// 这里可以添加地图加载代码，例如使用高德地图API
+			// 示例：加载地图的代码
+			// var map = new AMap.Map('map-container', {
+			//     center: [118.036434, 29.809262], // 齐云山坐标
+			//     zoom: 11
+			// });
+		});
+	</script>
+</body>
+
+</html>

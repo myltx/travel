@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2025年十一宜昌恩施7日游行程攻略</title>
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-bg: #fff;
+            --bg-color: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* A4纸张样式 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        /* 页眉 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15mm;
+            padding-bottom: 5mm;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .trip-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10mm;
+            color: var(--primary-color);
+        }
+
+        /* 行程概览 */
+        .overview {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .overview h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .overview-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .overview-item i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+
+        /* 详细行程 */
+        .itinerary {
+            margin-bottom: 15px;
+        }
+
+        .day {
+            margin-bottom: 20px;
+        }
+
+        .day-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .day-content {
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 15px;
+        }
+
+        .activity {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .activity:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .time {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .activity-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .activity-details {
+            padding-left: 20px;
+        }
+
+        /* 景点预览 */
+        .attractions {
+            margin-bottom: 20px;
+        }
+
+        .attractions h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .attraction-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .attraction-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .attraction-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 15px;
+        }
+
+        .attraction-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* 地图展示 */
+        .map-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin: 20px 0 15px 0;
+            font-weight: bold;
+        }
+
+        .map-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .map-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .map-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .map-container {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e8f4f8;
+        }
+
+        .custom-map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .route-line {
+            stroke: var(--primary-color);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* 注意事项 */
+        .notes {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .notes h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .notes ul {
+            padding-left: 20px;
+        }
+
+        .notes li {
+            margin-bottom: 10px;
+        }
+
+        .notes li strong {
+            color: var(--primary-color);
+        }
+
+        /* 响应式设计 */
+        @media print {
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            
+            .map-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 10mm;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .attraction-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- 引入Font Awesome图标库 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="header">
+        <div class="logo">旅游指南</div>
+        <div class="date">2025年10月1日 - 10月7日</div>
+      </div>
+
+      <h1 class="trip-title">2025年十一宜昌恩施7日游行程攻略</h1>
+
+      <div class="overview">
+        <h2><i class="fas fa-info-circle"></i> 行程概览</h2>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>日期: 2025年10月1日至10月7日（周三至周二）</span>
+          </div>
+          <div class="overview-item">
+            <i class="fas fa-car"></i>
+            <span>出行方式: 自驾为主，景区内打车为辅</span>
+          </div>
+          <div class="overview-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>目的地: 湖北省（宜昌、恩施）</span>
+          </div>
+          <div class="overview-item">
+            <i class="fas fa-cloud-sun"></i>
+            <span>天气: 秋高气爽，气温15-25℃左右</span>
+          </div>
+          <div class="overview-item">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>预估费用: 人均1500-2000元（含门票、交通、住宿、餐饮）</span>
+          </div>
+          <div class="overview-item">
+            <i class="fas fa-ticket-alt"></i>
+            <span>主要景点门票: 三峡大瀑布115元，三峡大坝35元，恩施大峡谷185元，腾龙洞150元</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="attractions">
+        <h2><i class="fas fa-camera"></i> 景点预览</h2>
+        <div class="attraction-cards">
+          <div class="attraction-card">
+            <img src="https://picsum.photos/300/200?random=11" alt="三峡大坝" class="attraction-img">
+            <div class="attraction-info">
+              <h3>三峡大坝</h3>
+              <p>世界最大的水利枢纽工程，可以体验"大船爬楼梯"过五级船闸的壮观景象。</p>
+              <p><strong>门票价格：</strong>景区免费，景区交通车35元/人</p>
+            </div>
+          </div>
+          <div class="attraction-card">
+            <img src="https://picsum.photos/300/200?random=12" alt="三峡人家" class="attraction-img">
+            <div class="attraction-info">
+              <h3>三峡人家</h3>
+              <p>展示巴楚文化的景区，可以体验传统的峡江生活和民俗风情。</p>
+              <p><strong>门票价格：</strong>成人票210元（含门票150元+换乘车30元+渡船30元），学生票135元，1.2米以下儿童免费</p>
+            </div>
+          </div>
+          <div class="attraction-card">
+            <img src="https://picsum.photos/300/200?random=13" alt="三峡大瀑布" class="attraction-img">
+            <div class="attraction-info">
+              <h3>三峡大瀑布</h3>
+              <p>被誉为"中国十大名瀑"之一，瀑布高102米，宽80余米，飞流直下，气势磅礴。</p>
+              <p><strong>门票价格：</strong>成人票115元，学生票50元，1.2米以下儿童免费</p>
+            </div>
+          </div>
+          <div class="attraction-card">
+            <img src="https://picsum.photos/300/200?random=14" alt="恩施大峡谷" class="attraction-img">
+            <div class="attraction-info">
+              <h3>恩施大峡谷</h3>
+              <p>媲美美国科罗拉多大峡谷，拥有独特的"地缝-天坑-岩柱群"复合型喀斯特地貌。</p>
+              <p><strong>门票价格：</strong>成人票185元，学生票95元，1.2米以下儿童免费</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="itinerary">
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第一天（10月1日 周三）- 抵达宜昌
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">全天</span> 抵达宜昌，入住酒店
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>抵达宜昌三峡机场或宜昌东站</li>
+                  <li>推荐酒店：宜昌万达嘉华酒店、宜昌三峡国际大酒店等</li>
+                  <li>办理入住手续，稍作休息</li>
+                  <li>自由活动，适应环境</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">晚上</span> 品尝宜昌美食
+              </div>
+              <div class="activity-details">
+                <p>前往宜昌夜市，品尝宜昌特色美食如凉虾、萝卜饺子等</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第二天（10月2日 周四）- 三峡大坝 → 三峡人家
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-12:00</span> 游览三峡大坝（交通车票：35元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>游览坛子岭，俯瞰三峡大坝全景</li>
+                  <li>参观185平台，近距离感受大坝雄伟</li>
+                  <li>体验五级船闸，观看"大船爬楼梯"</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">12:30-13:30</span> 午餐
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">14:00-17:30</span> 游览三峡人家（门票：210元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>体验巴楚文化，观看民俗表演</li>
+                  <li>游览明月湾、石牌古镇等景点</li>
+                  <li>欣赏长江三峡的另一种美丽</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">18:00</span> 返回宜昌市区，入住酒店
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第三天（10月3日 周五）- 三峡大瀑布
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-16:00</span> 游览三峡大瀑布（门票：115元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>游览三峡大瀑布主景区，观赏高达102米的瀑布</li>
+                  <li>体验悬空栈道，从不同角度欣赏瀑布美景</li>
+                  <li>探索野人谷等周边景点</li>
+                  <li>感受瀑布飞流直下的壮观景象</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">17:00</span> 返回宜昌市区，入住酒店
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第四天（10月4日 周六）- 宜昌 → 恩施
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-12:00</span> 驱车前往恩施（约300公里，车程约4小时）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>从宜昌出发，经沪渝高速前往恩施</li>
+                  <li>途中欣赏三峡地区山水风光</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">12:30-13:30</span> 午餐
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">14:00-17:00</span> 游览恩施土司城（门票：约50元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>参观土家族文化展示区</li>
+                  <li>了解土司制度历史文化</li>
+                  <li>观看土家族歌舞表演</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">17:30</span> 入住恩施酒店
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第五天（10月5日 周日）- 恩施大峡谷
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">07:00-07:30</span> 酒店早餐
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-17:00</span> 游览恩施大峡谷（门票：185元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>游览七星寨景区，观赏"一炷香"等地质奇观</li>
+                  <li>体验云龙地缝，感受峡谷的深邃与神秘</li>
+                  <li>乘坐观光电梯和索道，欣赏壮丽景色</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">18:00</span> 返回恩施市区，入住酒店
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第六天（10月6日 周一）- 腾龙洞
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-12:00</span> 游览腾龙洞（门票：150元/人）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>游览亚洲最大的溶洞——腾龙洞</li>
+                  <li>观看洞内激光秀和土家族歌舞表演</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">12:30-13:30</span> 午餐
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">14:00-17:00</span> 自由活动或游览利川周边景点
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>可选择游览利川其他景点，如龙船水乡等</li>
+                  <li>或在利川市区休闲购物</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">17:30</span> 入住利川酒店
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="day-header">
+            <i class="fas fa-calendar-day"></i> 第七天（10月7日 周二）- 利川 →
+            宜昌 → 返程
+          </div>
+          <div class="day-content">
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">08:00-12:00</span>
+                驱车返回宜昌（约250公里，车程约3小时）
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>从利川出发，经沪渝高速返回宜昌</li>
+                  <li>途中可根据时间安排适当休息</li>
+                </ul>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">12:30-14:00</span> 午餐
+              </div>
+              <div class="activity-details">
+                <p>在宜昌市区享用午餐</p>
+              </div>
+            </div>
+            <div class="activity">
+              <div class="activity-title">
+                <span class="time">14:30</span> 返程
+              </div>
+              <div class="activity-details">
+                <ul>
+                  <li>从宜昌三峡机场或宜昌东站返程</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <h2><i class="fas fa-exclamation-triangle"></i> 交通方式分析</h2>
+        <ol>
+            <li>
+                <strong>自驾优势：</strong>
+                <ul>
+                    <li>湖北景点之间距离较远且分布分散，自驾可以灵活安排行程</li>
+                    <li>可以随时停靠欣赏沿途风景</li>
+                    <li>行李携带方便，特别是景区间移动</li>
+                    <li>时间安排自由，不受公共交通限制</li>
+                    <li>湖北高速公路网络完善，路况良好</li>
+                </ul>
+            </li>
+            <li>
+                <strong>公共交通限制：</strong>
+                <ul>
+                    <li>景点间公共交通班次有限，等待时间长</li>
+                    <li>需要多次换乘，耗时较长</li>
+                    <li>行李携带不便</li>
+                    <li>时间固定，缺乏灵活性</li>
+                </ul>
+            </li>
+            <li>
+                <strong>景区内交通：</strong>
+                <ul>
+                    <li>同一天内的景点间移动建议使用打车软件，方便快捷</li>
+                    <li>各大景区内有观光车，可节省体力</li>
+                    <li>部分景区如恩施大峡谷必须乘坐索道或电梯</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="notes">
+        <h2><i class="fas fa-exclamation-triangle"></i> 注意事项</h2>
+        <ol>
+            <li>
+                <strong>行前准备：</strong>
+                <ul>
+                    <li>检查身份证件，提前预订酒店</li>
+                    <li>湖北秋季气候宜人，但早晚温差大，建议携带外套</li>
+                    <li>准备舒适的徒步鞋，景区多为山路</li>
+                    <li>携带雨具，湖北天气多变</li>
+                    <li>准备防晒用品和防蚊虫用品</li>
+                    <li>提前预订热门景点门票，如三峡大坝、恩施大峡谷等</li>
+                    <li>准备充足的资金，主要景点门票合计约600元左右（三峡大坝35元，三峡人家210元，三峡大瀑布115元，恩施大峡谷185元，腾龙洞150元），加上交通、住宿、餐饮预计人均1500-2000元</li>
+                </ul>
+            </li>
+            <li>
+                <strong>游览建议：</strong>
+                <ul>
+                    <li>三峡大瀑布为自然景区，注意防滑和安全，建议穿防滑鞋</li>
+                    <li>三峡大坝游览需要购买景区交通车票（35元/人）</li>
+                    <li>三峡人家门票包含景区交通（210元/人），体验巴楚文化</li>
+                    <li>三峡大瀑布为自然景区，注意防滑和安全，建议穿防滑鞋（115元/人）</li>
+                    <li>恩施大峡谷景区较大，建议安排一整天时间，门票185元/人</li>
+                    <li>腾龙洞内恒温，但地面湿滑，注意安全，门票150元/人</li>
+                    <li>十一黄金周期间游客较多，建议提前在网上预订门票，避免现场排队</li>
+                    <li>部分景区对特定人群有优惠政策（学生、老人等），请携带相关证件</li>
+                </ul>
+            </li>
+            <li>
+                <strong>饮食注意：</strong>
+                <ul>
+                    <li>湖北菜偏辣口味，如不适应可提前告知餐厅</li>
+                    <li>注意饮食卫生，尽量选择干净的餐厅</li>
+                    <li>多喝水，保持体力</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 旅游指南 | 行程规划日期：2025年9月</p>
+        <p>本行程单仅供参考，实际行程可能因天气、交通等因素有所调整</p>
+    </div>
+</div>
+
+<button class="print-button" onclick="window.print()">
+  <i class="fas fa-print print-icon"></i> 打印行程
+</button>
+
+<script>
+    // 景点坐标信息 (转换为SVG坐标)
+    const attractions = [
+        {
+            name: "宜昌",
+            position: [100, 400],
+            day: 1
+        },
+        {
+            name: "三峡大坝",
+            position: [300, 300],
+            day: 2
+        },
+        {
+            name: "三峡人家",
+            position: [250, 250],
+            day: 2
+        },
+        {
+            name: "三峡大瀑布",
+            position: [350, 200],
+            day: 3
+        },
+        {
+            name: "恩施",
+            position: [500, 200],
+            day: 4
+        },
+        {
+            name: "恩施大峡谷",
+            position: [600, 150],
+            day: 5
+        },
+        {
+            name: "腾龙洞",
+            position: [700, 250],
+            day: 6
+        },
+        {
+            name: "利川",
+            position: [720, 300],
+            day: 6
+        }
+    ];
+
+    // 路线信息 (SVG坐标)
+    const routes = [
+        {
+            name: "第一天路线",
+            waypoints: [
+                [100, 400] // 宜昌
+            ]
+        },
+        {
+            name: "第二天路线",
+            waypoints: [
+                [100, 400], // 宜昌
+                [300, 300], // 三峡大坝
+                [250, 250]  // 三峡人家
+            ]
+        },
+        {
+            name: "第三天路线",
+            waypoints: [
+                [250, 250], // 三峡人家
+                [350, 200]  // 三峡大瀑布
+            ]
+        },
+        {
+            name: "第四天路线",
+            waypoints: [
+                [350, 200], // 三峡大瀑布
+                [500, 200]  // 恩施
+            ]
+        },
+        {
+            name: "第五天路线",
+            waypoints: [
+                [500, 200], // 恩施
+                [600, 150]  // 恩施大峡谷
+            ]
+        },
+        {
+            name: "第六天路线",
+            waypoints: [
+                [600, 150], // 恩施大峡谷
+                [700, 250]  // 腾龙洞
+            ]
+        },
+        {
+            name: "第七天路线",
+            waypoints: [
+                [700, 250], // 腾龙洞
+                [100, 400]  // 返回宜昌
+            ]
+        }
+    ];
+
+    // 页面加载完成后初始化地图
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("行程单加载完成");
+        initMap();
+
+        // 绑定按钮事件
+        document
+          .getElementById("showRoute1")
+          .addEventListener("click", function () {
+            showRoute(0);
+          });
+        document
+          .getElementById("showRoute2")
+          .addEventListener("click", function () {
+            showRoute(1);
+          });
+        document
+          .getElementById("showRoute3")
+          .addEventListener("click", function () {
+            showRoute(2);
+          });
+        document
+          .getElementById("showRoute4")
+          .addEventListener("click", function () {
+            showRoute(3);
+          });
+        document
+          .getElementById("showRoute5")
+          .addEventListener("click", function () {
+            showRoute(4);
+          });
+        document
+          .getElementById("showRoute6")
+          .addEventListener("click", function () {
+            showRoute(5);
+          });
+        document
+          .getElementById("showRoute7")
+          .addEventListener("click", function () {
+            showRoute(6);
+          });
+        document
+          .getElementById("showAll")
+          .addEventListener("click", function () {
+            showAllRoutes();
+          });
+    });
+
+    // 初始化地图
+    function initMap() {
+        addAttractionMarkers();
+        showAllRoutes();
+    }
+
+    // 添加景点标记
+    function addAttractionMarkers() {
+        const markersGroup = document.getElementById('markers');
+        markersGroup.innerHTML = ''; // 清空现有标记
+        
+        attractions.forEach(function (attraction) {
+            const marker = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            marker.setAttribute('class', 'map-marker-group');
+            
+            // 创建标记点
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', attraction.position[0]);
+            circle.setAttribute('cy', attraction.position[1]);
+            circle.setAttribute('r', '8');
+            circle.setAttribute('fill', '#f39c12');
+            circle.setAttribute('stroke', '#fff');
+            circle.setAttribute('stroke-width', '2');
+            
+            // 创建标记标签
+            const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            label.setAttribute('x', attraction.position[0]);
+            label.setAttribute('y', attraction.position[1] - 15);
+            label.setAttribute('text-anchor', 'middle');
+            label.setAttribute('font-size', '12');
+            label.setAttribute('fill', '#333');
+            label.textContent = attraction.name;
+            
+            marker.appendChild(circle);
+            marker.appendChild(label);
+            markersGroup.appendChild(marker);
+        });
+    }
+
+    // 显示路线
+    function showRoute(index) {
+        const routesGroup = document.getElementById('routes');
+        routesGroup.innerHTML = ''; // 清空现有路线
+        
+        const route = routes[index];
+        if (route.waypoints.length < 2) {
+            return;
+        }
+        
+        // 创建路线路径
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        let points = '';
+        route.waypoints.forEach((point, i) => {
+            points += point[0] + ',' + point[1];
+            if (i < route.waypoints.length - 1) {
+                points += ' ';
+            }
+        });
+        
+        path.setAttribute('points', points);
+        path.setAttribute('class', 'route-line');
+        path.setAttribute('stroke', '#3498db');
+        path.setAttribute('stroke-width', '3');
+        path.setAttribute('fill', 'none');
+        
+        routesGroup.appendChild(path);
+    }
+
+    // 显示所有路线
+    function showAllRoutes() {
+        const routesGroup = document.getElementById('routes');
+        routesGroup.innerHTML = ''; // 清空现有路线
+        
+        routes.forEach(function(route) {
+            if (route.waypoints.length < 2) {
+                return;
+            }
+            
+            // 创建路线路径
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+            let points = '';
+            route.waypoints.forEach((point, i) => {
+                points += point[0] + ',' + point[1];
+                if (i < route.waypoints.length - 1) {
+                    points += ' ';
+                }
+            });
+            
+            path.setAttribute('points', points);
+            path.setAttribute('class', 'route-line');
+            path.setAttribute('stroke', '#3498db');
+            path.setAttribute('stroke-width', '2');
+            path.setAttribute('fill', 'none');
+            path.setAttribute('stroke-opacity', '0.6');
+            
+            routesGroup.appendChild(path);
+        });
+    }
+</script>
+</body>
+</html>

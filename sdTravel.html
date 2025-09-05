@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>山东慢生活旅行攻略</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+      }
+
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      .overview {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .overview h2 {
+        color: #667eea;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 0.5rem;
+      }
+
+      .itinerary-day {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .itinerary-day:hover {
+        transform: translateY(-5px);
+      }
+
+      .day-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
+      }
+
+      .day-title {
+        color: #764ba2;
+        font-size: 1.8rem;
+      }
+
+      .weather-info {
+        background: #e8f4ff;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      .attraction-card {
+        display: flex;
+        margin-bottom: 1.5rem;
+        background: #fafafa;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .attraction-image {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .attraction-info {
+        padding: 1rem;
+        flex: 1;
+      }
+
+      .attraction-name {
+        font-size: 1.3rem;
+        color: #667eea;
+        margin-bottom: 0.5rem;
+      }
+
+      .attraction-details {
+        margin-bottom: 0.5rem;
+      }
+
+      .price {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+
+      .transport {
+        background: #e8f4ff;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+
+      .map-container {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .map-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #cce6ff 0%, #e6f2ff 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+      }
+
+      .tips {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-top: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .tips li {
+        margin-bottom: 0.5rem;
+        padding-left: 1rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: #333;
+        color: white;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .attraction-card {
+          flex-direction: column;
+        }
+
+        .attraction-image {
+          width: 100%;
+          height: 200px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .day-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>山东慢生活旅行攻略</h1>
+      <p class="subtitle">青岛 · 威海 · 烟台 · 蓬莱阁 | 7天悠闲之旅</p>
+    </header>
+
+    <div class="container">
+      <section class="overview">
+        <h2>行程概览</h2>
+        <p>
+          本次旅行将带您游览山东半岛的精华景点，体验海滨城市的慢生活节奏。行程安排宽松舒适，充分感受每个城市的独特魅力。
+        </p>
+        <p><strong>旅行时间：</strong>2025年9月30日 - 2025年10月6日（共7天）</p>
+        <p><strong>交通方式：</strong>高铁+打车</p>
+        <p><strong>行程特点：</strong>慢生活节奏，不赶时间，深度体验</p>
+      </section>
+
+      <!-- 第一天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第一天：抵达青岛</h2>
+          <div class="weather-info">青岛天气：多云转中雨，26-30°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年9月30日（周二）</p>
+        <p>
+          <strong>晚上抵达：</strong
+          >晚上抵达青岛北站，入住酒店休息，为明天的行程养精蓄锐。
+        </p>
+        <p>建议选择靠近市区的酒店入住，方便明日出行。</p>
+
+        <div class="transport">
+          <p>
+            <strong>交通安排：</strong>从青岛北站打车前往市区酒店，约30-50元
+          </p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <p>抵达较晚，推荐在酒店附近简单用餐：</p>
+          <ul>
+            <li><strong>青岛海鲜粥：</strong>清淡易消化，适合旅途后食用</li>
+            <li><strong>流亭猪蹄：</strong>青岛特色小吃，软糯香甜</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第二天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第二天：青岛市区游</h2>
+          <div class="weather-info">青岛天气：小雨转多云，24-28°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月1日（周三）</p>
+        <p>今天安排游览青岛市区主要景点，感受这座海滨城市的独特魅力。</p>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/43c52933c1769faa59b8ace73c85844d"
+            alt="栈桥景区"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">栈桥景区</h3>
+            <p class="attraction-details">
+              青岛标志性景点，延伸入海的栈桥是欣赏海景和拍照的好地方。
+            </p>
+            <p class="attraction-details">开放时间：全天</p>
+            <p class="attraction-details price">门票：免费</p>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/056214c266e0ba5a6a873c873f5b0de2"
+            alt="八大关风景区"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">八大关风景区</h3>
+            <p class="attraction-details">
+              以不同国家建筑风格的别墅群闻名，被誉为"万国建筑博览会"。
+            </p>
+            <p class="attraction-details">开放时间：全天</p>
+            <p class="attraction-details price">门票：免费</p>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/9df7c968c410f9be369ec14e659953a6"
+            alt="五四广场"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">五四广场</h3>
+            <p class="attraction-details">
+              青岛新市区的标志性景点，以"五月的风"雕塑而闻名。
+            </p>
+            <p class="attraction-details">开放时间：全天</p>
+            <p class="attraction-details price">门票：免费</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p><strong>市内交通：</strong>景点间打车前往，约20-30元</p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>青岛啤酒：</strong>来青岛必尝的特色，搭配海鲜更佳</li>
+            <li>
+              <strong>蛤蜊汤：</strong
+              >新鲜的蛤蜊配以简单的调料煮制而成，鲜美无比
+            </li>
+            <li><strong>烤鱿鱼：</strong>青岛街头小吃，香辣可口</li>
+            <li><strong>海菜凉粉：</strong>青岛特色小食，清凉爽口</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第三天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第三天：青岛崂山一日游</h2>
+          <div class="weather-info">青岛天气：多云，23-28°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月2日（周四）</p>
+        <p>今天前往崂山，体验山海相连的壮丽景色。</p>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/38b4e0e9be971b23ca083c0d53921c49"
+            alt="崂山流清游览区"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">崂山流清游览区</h3>
+            <p class="attraction-details">
+              崂山的主要游览区之一，以山海结合的自然风光著称。
+            </p>
+            <p class="attraction-details">
+              开放时间：3月1日-6月30日:07:00-17:30；7月1日-8月31日:06:00-19:00；9月1日-11月30日:07:00-17:30；12月1日-次年2月28日:07:30-17:00
+            </p>
+            <p class="attraction-details price">门票：需查询最新价格</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p><strong>市内交通：</strong>从市区到崂山打车约50-80元</p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>崂山茶：</strong>崂山特产，清香宜人</li>
+            <li><strong>鲅鱼饺子：</strong>青岛特色水饺，肉质鲜美</li>
+            <li><strong>海肠捞饭：</strong>青岛高端海鲜菜品，口感独特</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第四天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第四天：青岛 → 威海</h2>
+          <div class="weather-info">威海天气：多云转雷阵雨，25-30°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月3日（周五）</p>
+        <p>乘坐高铁前往威海（约2.5小时），下午游览威海市区。</p>
+
+        <div class="attraction-card">
+          <img
+            src="https://aos-comment.amap.com/B0FFGM2GIN/comment/27853a13fd7bf47906e98c4a560ab3ed_2048_2048_80.jpg"
+            alt="幸福门广场"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">幸福门广场</h3>
+            <p class="attraction-details">
+              威海的标志性建筑，象征着幸福和美好。
+            </p>
+            <p class="attraction-details">开放时间：全天</p>
+            <p class="attraction-details price">门票：免费</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p><strong>交通安排：</strong>高铁青岛北站 → 威海站，约2.5小时</p>
+          <p><strong>市内交通：</strong>景点间打车前往，约15-25元</p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>威海海鲜：</strong>威海海域出产的各类新鲜海鲜</li>
+            <li><strong>鲅鱼水饺：</strong>威海特色，比青岛鲅鱼饺子个头更大</li>
+            <li><strong>海带丝：</strong>威海特产，清爽开胃</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第五天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第五天：威海刘公岛</h2>
+          <div class="weather-info">威海天气：小雨转多云，23-29°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月4日（周六）</p>
+        <p>全天游览刘公岛，了解甲午战争历史，欣赏海岛风光。</p>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/a92991b5cde628656b99f7ca1c64de40"
+            alt="刘公岛景区"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">刘公岛景区</h3>
+            <p class="attraction-details">
+              AAAAA级景区，甲午战争的重要历史遗址，有丰富的历史文化内涵。
+            </p>
+            <p class="attraction-details">
+              开放时间：7:30-17:30，16:00停止入园
+            </p>
+            <p class="attraction-details price">门票：130元</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p><strong>市内交通：</strong>景点间打车前往，约20-30元</p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>威海海参：</strong>威海著名海产，营养丰富</li>
+            <li><strong>炸鲅鱼：</strong>威海特色菜，外酥里嫩</li>
+            <li><strong>海蛎子粥：</strong>鲜美营养，适合早餐或晚餐</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第六天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第六天：威海 → 烟台 → 蓬莱阁</h2>
+          <div class="weather-info">烟台天气：小雨转晴，20-28°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月5日（周日）</p>
+        <p>乘坐高铁前往烟台（约1小时），然后前往蓬莱阁。</p>
+
+        <div class="attraction-card">
+          <img
+            src="http://store.is.autonavi.com/showpic/37aa3158faf15fd9ebc0d1a3b7f23d0a"
+            alt="蓬莱阁景区"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">蓬莱阁景区</h3>
+            <p class="attraction-details">
+              AAAAA级景区，中国古代四大名楼之一，素有人间仙境之称。
+            </p>
+            <p class="attraction-details">
+              开放时间：8:00-18:00，17:00停止检票
+            </p>
+            <p class="attraction-details price">门票：140元</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p>
+            <strong>交通安排：</strong>高铁威海站 → 烟台站，约1小时；烟台站 →
+            蓬莱阁打车，约1小时
+          </p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>蓬莱小面：</strong>蓬莱特色小吃，汤鲜面滑</li>
+            <li><strong>海肠饺子：</strong>烟台特色，口感鲜美</li>
+            <li><strong>鲅鱼饺子：</strong>烟台传统水饺，肉质鲜嫩</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 第七天 -->
+      <section class="itinerary-day">
+        <div class="day-header">
+          <h2 class="day-title">第七天：烟台养马岛 → 返程</h2>
+          <div class="weather-info">烟台天气：多云转小雨，18-27°C</div>
+        </div>
+        <p><strong>日期：</strong>2025年10月6日（周一）</p>
+        <p>上午游览养马岛，下午根据返程时间安排送站。</p>
+
+        <div class="attraction-card">
+          <img
+            src="http://aos-cdn-image.amap.com/sns/ugccomment/eb5996af-8253-427e-8fd1-3d1291238b43.jpg"
+            alt="养马岛"
+            class="attraction-image" />
+          <div class="attraction-info">
+            <h3 class="attraction-name">养马岛</h3>
+            <p class="attraction-details">
+              AAAA级景区，风景秀丽的海岛，相传秦始皇曾在此养马。
+            </p>
+            <p class="attraction-details">开放时间：全天</p>
+            <p class="attraction-details price">门票：免费</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <p><strong>市内交通：</strong>景点间打车前往，约30-50元</p>
+          <p><strong>交通安排：</strong>根据返程时间安排送站</p>
+          <p>
+            <strong>高德地图导航：</strong
+            ><a href="javascript:void(0)" onclick="openGaodeMap()"
+              >点击在高德地图中查看行程</a
+            >
+          </p>
+        </div>
+
+        <div class="food-recommendation">
+          <h3>美食推荐</h3>
+          <ul>
+            <li><strong>烟台苹果：</strong>烟台特产，脆甜多汁</li>
+            <li><strong>福山大面：</strong>烟台传统面食，汤浓面劲</li>
+            <li><strong>海鲜大咖：</strong>各种海鲜一锅烩，适合多人分享</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="map-container">
+        <h2>行程地图</h2>
+        <div class="map-placeholder">
+          <p>自定义SVG地图展示旅行路线</p>
+        </div>
+        <p>
+          地图展示了本次旅行的主要城市和景点位置，路线经过精心规划，确保行程舒适。
+        </p>
+      </section>
+
+      <section class="tips">
+        <h2>旅行小贴士</h2>
+        <ul>
+          <li>山东半岛10月天气渐凉，建议携带轻便外套</li>
+          <li>各城市间高铁票建议提前预订，特别是节假日期间</li>
+          <li>景区门票价格可能会有变动，建议出行前再次确认</li>
+          <li>打车时建议使用高德地图等导航软件，方便司机准确到达目的地</li>
+          <li>海鲜是山东特色美食，但要注意适量，避免肠胃不适</li>
+          <li>各景区开放时间可能因季节调整，出行前建议查询最新信息</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>祝您旅途愉快！</p>
+      <p>本行程由智能旅行助手为您定制</p>
+    </footer>
+
+    <script>
+      function openGaodeMap() {
+        alert("在实际应用中，这里会打开高德地图APP显示相关行程。");
+        // 实际应用中会调用高德地图的URI Scheme
+      }
+    </script>
+  </body>
+</html>

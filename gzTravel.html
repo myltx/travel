@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2025年十一贵州6日游行程攻略</title>
+	<style>
+		/* 全局样式 */
+		:root {
+			--primary-color: #3498db;
+			--secondary-color: #2ecc71;
+			--accent-color: #f39c12;
+			--text-color: #333;
+			--light-gray: #f5f5f5;
+			--border-color: #e0e0e0;
+			--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			--card-bg: #fff;
+			--bg-color: #f9f9f9;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
+		}
+
+		body {
+			background-color: var(--bg-color);
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		/* A4纸张样式 */
+		.page {
+			width: 210mm;
+			min-height: 297mm;
+			padding: 20mm;
+			margin: 10mm auto;
+			background: var(--card-bg);
+			box-shadow: var(--shadow);
+			position: relative;
+		}
+
+		/* 页眉 */
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 15mm;
+			padding-bottom: 5mm;
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+			color: var(--primary-color);
+		}
+
+		.trip-title {
+			font-size: 28px;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: 10mm;
+			color: var(--primary-color);
+		}
+
+		/* 行程概览 */
+		.overview {
+			background-color: var(--light-gray);
+			padding: 15px;
+			border-radius: 8px;
+			margin-bottom: 15px;
+		}
+
+		.overview h2 {
+			color: var(--primary-color);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+
+		.overview-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 15px;
+		}
+
+		.overview-item {
+			display: flex;
+			align-items: center;
+		}
+
+		.overview-item i {
+			margin-right: 10px;
+			color: var(--accent-color);
+			font-size: 18px;
+		}
+
+		/* 详细行程 */
+		.itinerary {
+			margin-bottom: 15px;
+		}
+
+		.day {
+			margin-bottom: 20px;
+		}
+
+		.day-header {
+			background-color: var(--primary-color);
+			color: white;
+			padding: 10px 15px;
+			border-radius: 8px 8px 0 0;
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.day-content {
+			border: 1px solid var(--border-color);
+			border-top: none;
+			border-radius: 0 0 8px 8px;
+			padding: 15px;
+		}
+
+		.activity {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px dashed var(--border-color);
+		}
+
+		.activity:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.time {
+			font-weight: bold;
+			color: var(--primary-color);
+			margin-right: 10px;
+		}
+
+		.activity-title {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		.activity-details {
+			padding-left: 20px;
+		}
+
+		.activity-details ul {
+			padding-left: 20px;
+		}
+
+		/* 注意事项 */
+		.notes {
+			background-color: #fff8e1;
+			border-left: 4px solid var(--accent-color);
+			padding: 15px;
+			margin-bottom: 15px;
+			border-radius: 0 8px 8px 0;
+		}
+
+		.notes h2 {
+			color: var(--accent-color);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+
+		/* 景点卡片 */
+		.attractions {
+			margin-bottom: 15px;
+		}
+
+		.attractions h2 {
+			color: var(--primary-color);
+			margin-bottom: 15px;
+			font-size: 20px;
+		}
+
+		.attraction-cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: 20px;
+		}
+
+		.attraction-card {
+			background: var(--card-bg);
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: var(--shadow);
+			transition: transform 0.3s ease;
+		}
+
+		.attraction-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.attraction-img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+		}
+
+		.attraction-info {
+			padding: 15px;
+		}
+
+		.attraction-info h3 {
+			color: var(--primary-color);
+			margin-bottom: 10px;
+		}
+
+		.attraction-info p {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 10px;
+		}
+
+		/* 地图 */
+		.map-container {
+			height: 400px;
+			background-color: var(--light-gray);
+			margin-bottom: 15px;
+			border-radius: 8px;
+			position: relative;
+		}
+
+		#map {
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+		}
+
+		.map-title {
+			color: var(--primary-color);
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+
+		.map-controls {
+			margin-bottom: 15px;
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.map-btn {
+			padding: 8px 15px;
+			background-color: var(--primary-color);
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.map-btn:hover {
+			background-color: #2980b9;
+		}
+
+		/* 页脚 */
+		.footer {
+			margin-top: 15mm;
+			padding-top: 5mm;
+			border-top: 1px solid var(--border-color);
+			text-align: center;
+			font-size: 12px;
+			color: #888;
+		}
+
+		/* 打印按钮 */
+		.print-button {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 30px;
+			cursor: pointer;
+			font-size: 16px;
+			display: flex;
+			align-items: center;
+			box-shadow: var(--shadow);
+			transition: all 0.3s ease;
+			z-index: 1000;
+		}
+
+		.print-button:hover {
+			background-color: #2980b9;
+			transform: translateY(-2px);
+		}
+
+		.print-icon {
+			margin-right: 8px;
+		}
+
+		/* 打印样式 */
+		@media print {
+			body {
+				background: none;
+			}
+
+			.page {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				padding: 15mm;
+				box-shadow: none;
+			}
+
+			.print-button {
+				display: none;
+			}
+		}
+
+		/* 响应式设计 */
+		@media (max-width: 210mm) {
+			.page {
+				width: 100%;
+				margin: 0;
+				padding: 15px;
+			}
+
+			.overview-grid {
+				grid-template-columns: 1fr;
+			}
+			
+			.map-controls {
+				flex-direction: column;
+			}
+		}
+	</style>
+	<!-- 引入Font Awesome图标库 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<!-- 引入高德地图API -->
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=您申请的key值"></script>
+</head>
+
+<body>
+	<div class="page">
+		<div class="header">
+			<div class="logo">旅游指南</div>
+			<div class="date">2025年9月28日 - 10月3日</div>
+		</div>
+
+		<h1 class="trip-title">2025年十一贵州6日游行程攻略</h1>
+
+		<div class="overview">
+			<h2><i class="fas fa-info-circle"></i> 行程概览</h2>
+			<div class="overview-grid">
+				<div class="overview-item">
+					<i class="fas fa-calendar-alt"></i>
+					<span>日期: 2025年9月28日至10月3日（周日至周五）</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-car"></i>
+					<span>出行方式: 自驾为主，景区内打车为辅</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-map-marker-alt"></i>
+					<span>目的地: 贵州省（贵阳、安顺、黔东南、铜仁）</span>
+				</div>
+				<div class="overview-item">
+					<i class="fas fa-cloud-sun"></i>
+					<span>天气: 秋高气爽，气温15-25℃左右</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="attractions">
+			<h2><i class="fas fa-camera"></i> 景点预览</h2>
+			<div class="attraction-cards">
+				<div class="attraction-card">
+					<img src="https://picsum.photos/300/200?random=1" alt="黄果树瀑布" class="attraction-img">
+					<div class="attraction-info">
+						<h3>黄果树大瀑布</h3>
+						<p>亚洲第一大瀑布，高达77.8米，宽101米，是世界著名大瀑布之一。</p>
+					</div>
+				</div>
+				<div class="attraction-card">
+					<img src="https://picsum.photos/300/200?random=2" alt="荔波小七孔" class="attraction-img">
+					<div class="attraction-info">
+						<h3>荔波小七孔</h3>
+						<p>被誉为"地球腰带上的绿宝石"，集山、水、洞、林、湖、瀑布于一体。</p>
+					</div>
+				</div>
+				<div class="attraction-card">
+					<img src="https://picsum.photos/300/200?random=3" alt="西江千户苗寨" class="attraction-img">
+					<div class="attraction-info">
+						<h3>西江千户苗寨</h3>
+						<p>世界上最大的苗族聚居村寨，保存着完整的苗族文化。</p>
+					</div>
+				</div>
+				<div class="attraction-card">
+					<img src="https://picsum.photos/300/200?random=4" alt="梵净山" class="attraction-img">
+					<div class="attraction-info">
+						<h3>梵净山</h3>
+						<p>贵州第一名山，佛教圣地，拥有独特的生态系统和云海奇观。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="map-title"><i class="fas fa-map-marked-alt"></i> 旅游路线地图</div>
+		<div class="map-controls">
+			<button class="map-btn" id="showRoute1">第一天路线</button>
+			<button class="map-btn" id="showRoute2">第二天路线</button>
+			<button class="map-btn" id="showRoute3">第三天路线</button>
+			<button class="map-btn" id="showRoute4">第四天路线</button>
+			<button class="map-btn" id="showRoute5">第五天路线</button>
+			<button class="map-btn" id="showRoute6">第六天路线</button>
+			<button class="map-btn" id="showAll">全部路线</button>
+			<button class="map-btn" id="openInApp">在高德地图中打开</button>
+		</div>
+		<div class="map-container">
+			<div id="map"></div>
+		</div>
+
+		<div class="itinerary">
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第一天（9月28日 周日）- 抵达贵阳
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">全天</span> 抵达贵阳，入住酒店
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>抵达贵阳龙洞堡国际机场或贵阳北站</li>
+								<li>推荐酒店：贵阳凯宾斯基大酒店、贵阳喜来登贵航酒店等</li>
+								<li>办理入住手续，稍作休息</li>
+								<li>自由活动，适应环境</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">晚上</span> 品尝贵阳美食
+						</div>
+						<div class="activity-details">
+							<p>前往二七路小吃街或青云市集，品尝丝娃娃、肠旺面等贵阳特色美食</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第二天（9月29日 周一）- 贵阳 → 安顺（黄果树瀑布）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">07:00-07:30</span> 酒店早餐
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-10:00</span> 驱车前往黄果树风景区（约120公里，车程约2小时）
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从贵阳出发，走沪昆高速(G60)直达黄果树景区</li>
+								<li>沿途欣赏贵州喀斯特地貌风光</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">10:30-17:00</span> 游览黄果树景区
+						</div>
+						<div class="activity-details">
+							<p>黄果树瀑布景区包含多个景点：</p>
+							<ol>
+								<li><strong>天星桥景区</strong> - 瀑布、奇石、溶洞组成的天然盆景</li>
+								<li><strong>陡坡塘瀑布</strong> - 《西游记》片尾曲拍摄地</li>
+								<li><strong>黄果树大瀑布</strong> - 核心景点，可从多个角度观赏</li>
+								<li>穿越水帘洞，感受瀑布的震撼</li>
+							</ol>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">17:30-19:00</span> 返回安顺市区，晚餐
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>入住安顺酒店</li>
+								<li>品尝安顺特色裹卷</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第三天（9月30日 周二）- 安顺 → 荔波（小七孔）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">07:00-07:30</span> 酒店早餐
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-12:00</span> 驱车前往荔波小七孔（约280公里，车程约4小时）
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从安顺出发，经沪昆高速转驾荔高速再转汕昆高速到达荔波</li>
+								<li>途中在凯里或都匀休息、午餐</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:30-17:30</span> 游览小七孔景区
+						</div>
+						<div class="activity-details">
+							<ol>
+								<li><strong>小七孔古桥</strong> - 景区标志性景点</li>
+								<li><strong>拉雅瀑布</strong> - 沿着登山步道可近距离观赏</li>
+								<li><strong>水上森林</strong> - 踩水游览独特景观</li>
+								<li><strong>鸳鸯湖</strong> - 由大小两个天然湖泊组成</li>
+							</ol>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">18:00</span> 入住荔波县城酒店
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第四天（10月1日 周三）- 荔波 → 西江千户苗寨
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-12:00</span> 驱车前往西江千户苗寨（约260公里，车程约4小时）
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从荔波出发，经汕昆高速转厦蓉高速再转沪昆高速到达西江</li>
+								<li>途中欣赏贵州山区风光</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:30-14:00</span> 午餐
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">14:30-18:00</span> 游览西江千户苗寨
+						</div>
+						<div class="activity-details">
+							<ol>
+								<li>参观苗族博物馆，了解苗族历史文化</li>
+								<li>登上观景台，俯瞰整个苗寨全景</li>
+								<li>体验苗族长桌宴，品尝苗家特色美食</li>
+								<li>欣赏苗族歌舞表演</li>
+							</ol>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">18:30-20:30</span> 欣赏苗寨夜景
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>万家灯火点亮苗寨，拍摄夜景照片</li>
+								<li>品尝苗家酸汤鱼、米酒等特色美食</li>
+								<li>入住苗寨内特色客栈</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第五天（10月2日 周四）- 西江 → 铜仁（梵净山）
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-12:00</span> 驱车前往梵净山（约200公里，车程约3小时）
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从西江出发，经沪昆高速转杭瑞高速到达梵净山景区</li>
+								<li>途中欣赏山区风光</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:30-13:30</span> 午餐
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">14:00-17:00</span> 游览梵净山
+						</div>
+						<div class="activity-details">
+							<ol>
+								<li>乘坐索道上山（建议提前预订门票和索道票）</li>
+								<li>游览红云金顶、蘑菇石等标志性景点</li>
+								<li>观赏梵净山独特的生态系统</li>
+							</ol>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">17:30-19:00</span> 返回铜仁市区，晚餐
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>入住铜仁酒店</li>
+								<li>品尝当地特色美食</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="day">
+				<div class="day-header">
+					<i class="fas fa-calendar-day"></i> 第六天（10月3日 周五）- 铜仁 → 贵阳 → 返程
+				</div>
+				<div class="day-content">
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">08:00-12:00</span> 驱车返回贵阳（约250公里，车程约3小时）
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从铜仁出发，经杭瑞高速返回贵阳</li>
+								<li>途中可根据时间安排游览铜仁大峡谷或锦江风光</li>
+							</ul>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">12:30-14:00</span> 午餐
+						</div>
+						<div class="activity-details">
+							<p>在贵阳市区享用午餐</p>
+						</div>
+					</div>
+					<div class="activity">
+						<div class="activity-title">
+							<span class="time">14:30</span> 返程
+						</div>
+						<div class="activity-details">
+							<ul>
+								<li>从贵阳龙洞堡国际机场或贵阳北站返程</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="notes">
+			<h2><i class="fas fa-exclamation-triangle"></i> 交通方式分析</h2>
+			<ol>
+				<li>
+					<strong>自驾优势：</strong>
+					<ul>
+						<li>贵州景点之间距离较远且分布分散，自驾可以灵活安排行程</li>
+						<li>可以随时停靠欣赏沿途风景</li>
+						<li>行李携带方便，特别是景区间移动</li>
+						<li>时间安排自由，不受公共交通限制</li>
+						<li>贵州高速公路网络完善，路况良好</li>
+					</ul>
+				</li>
+				<li>
+					<strong>公共交通限制：</strong>
+					<ul>
+						<li>景点间公共交通班次有限，等待时间长</li>
+						<li>需要多次换乘，耗时较长</li>
+						<li>行李携带不便</li>
+						<li>时间固定，缺乏灵活性</li>
+					</ul>
+				</li>
+				<li>
+					<strong>景区内交通：</strong>
+					<ul>
+						<li>同一天内的景点间移动建议使用打车软件，方便快捷</li>
+						<li>各大景区内有观光车，可节省体力</li>
+						<li>部分景区如梵净山必须乘坐索道上山</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+		<div class="notes">
+			<h2><i class="fas fa-exclamation-triangle"></i> 注意事项</h2>
+			<ol>
+				<li>
+					<strong>行前准备：</strong>
+					<ul>
+						<li>检查身份证件，提前预订酒店</li>
+						<li>贵州秋季气候宜人，但早晚温差大，建议携带外套</li>
+						<li>准备舒适的徒步鞋，景区多为山路</li>
+						<li>携带雨具，贵州天气多变</li>
+						<li>准备防晒用品和防蚊虫用品</li>
+						<li>提前预订热门景点门票，如黄果树、梵净山等</li>
+					</ul>
+				</li>
+				<li>
+					<strong>游览建议：</strong>
+					<ul>
+						<li>黄果树瀑布景区较大，建议安排一整天时间</li>
+						<li>小七孔景区内不能坐车，需要步行游览，合理安排体力</li>
+						<li>苗寨商业化较重，购物需谨慎</li>
+						<li>梵净山需要提前预订门票和索道票</li>
+						<li>十一黄金周期间游客较多，建议早起避开人流高峰</li>
+					</ul>
+				</li>
+				<li>
+					<strong>饮食注意：</strong>
+					<ul>
+						<li>贵州菜偏酸辣口味，如不适应可提前告知餐厅</li>
+						<li>注意饮食卫生，尽量选择干净的餐厅</li>
+						<li>多喝水，保持体力</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+
+		<div class="footer">
+			<p>© 2025 旅游指南 | 行程规划日期：2025年8月</p>
+			<p>本行程单仅供参考，实际行程可能因天气、交通等因素有所调整</p>
+		</div>
+	</div>
+
+	<button class="print-button" onclick="window.print()">
+		<i class="fas fa-print print-icon"></i> 打印行程
+	</button>
+
+	<script>
+		// 初始化地图
+		var map, driving;
+		
+		// 景点坐标信息
+		const attractions = [
+			{
+				name: "贵阳",
+				position: [106.631481, 26.648639],
+				day: 1
+			},
+			{
+				name: "黄果树瀑布",
+				position: [105.638113, 25.984765],
+				day: 2
+			},
+			{
+				name: "荔波小七孔",
+				position: [107.732489, 25.341211],
+				day: 3
+			},
+			{
+				name: "西江千户苗寨",
+				position: [108.228194, 26.498267],
+				day: 4
+			},
+			{
+				name: "梵净山",
+				position: [108.728406, 27.913008],
+				day: 5
+			},
+			{
+				name: "铜仁",
+				position: [109.181023, 27.731575],
+				day: 5
+			}
+		];
+
+		// 路线信息
+		const routes = [
+			{
+				name: "第一天路线",
+				waypoints: [
+					[106.631481, 26.648639] // 贵阳
+				]
+			},
+			{
+				name: "第二天路线",
+				waypoints: [
+					[106.631481, 26.648639], // 贵阳
+					[105.638113, 25.984765]  // 黄果树瀑布
+				]
+			},
+			{
+				name: "第三天路线",
+				waypoints: [
+					[105.638113, 25.984765], // 黄果树瀑布
+					[107.732489, 25.341211]  // 荔波小七孔
+				]
+			},
+			{
+				name: "第四天路线",
+				waypoints: [
+					[107.732489, 25.341211], // 荔波小七孔
+					[108.228194, 26.498267]  // 西江千户苗寨
+				]
+			},
+			{
+				name: "第五天路线",
+				waypoints: [
+					[108.228194, 26.498267], // 西江千户苗寨
+					[108.728406, 27.913008]  // 梵净山
+				]
+			},
+			{
+				name: "第六天路线",
+				waypoints: [
+					[108.728406, 27.913008], // 梵净山
+					[106.631481, 26.648639]  // 返回贵阳
+				]
+			}
+		];
+
+		// 初始化地图
+		function initMap() {
+			map = new AMap.Map('map', {
+				resizeEnable: true,
+				center: [106.631481, 26.648639],
+				zoom: 8
+			});
+			
+			// 创建路线规划插件
+			AMap.plugin(['AMap.Driving'], function(){
+				driving = new AMap.Driving({
+					map: map,
+					panel: null
+				});
+			});
+			
+			// 添加景点标记
+			addAttractionMarkers();
+		}
+		
+		// 添加景点标记
+		function addAttractionMarkers() {
+			attractions.forEach(function(attraction) {
+				var marker = new AMap.Marker({
+					position: new AMap.LngLat(attraction.position[0], attraction.position[1]),
+					title: attraction.name,
+					label: {
+						content: attraction.name,
+						offset: new AMap.Pixel(10, 10)
+					}
+				});
+				marker.setMap(map);
+			});
+		}
+		
+		// 显示路线
+		function showRoute(index) {
+			if (!driving) return;
+			
+			map.clearMap();
+			addAttractionMarkers();
+			
+			const route = routes[index];
+			if (route.waypoints.length < 2) {
+				map.setCenter(route.waypoints[0]);
+				return;
+			}
+			
+			driving.search(
+				new AMap.LngLat(route.waypoints[0][0], route.waypoints[0][1]),
+				new AMap.LngLat(route.waypoints[route.waypoints.length-1][0], route.waypoints[route.waypoints.length-1][1]),
+				{waypoints: route.waypoints.slice(1, route.waypoints.length-1).map(wp => new AMap.LngLat(wp[0], wp[1]))},
+				function(status, result) {
+					if (status === 'complete' && result.routes && result.routes.length) {
+						console.log('路线规划成功');
+					} else {
+						console.error('路线规划失败');
+					}
+				}
+			);
+		}
+		
+		// 显示所有路线
+		function showAllRoutes() {
+			map.clearMap();
+			addAttractionMarkers();
+			map.setZoom(8);
+		}
+		
+		// 在高德地图中打开
+		function openInAmap() {
+			// 这里应该调用高德地图的URI API来打开应用
+			// 由于需要实际的POI ID，我们用一个示例链接
+			const url = "https://uri.amap.com/marker?markers=106.631481,26.648639,贵阳&src=mypage&coordinate=gaode&callnative=0";
+			window.open(url, '_blank');
+		}
+		
+		// 页面加载完成后初始化地图
+		document.addEventListener('DOMContentLoaded', function () {
+			console.log('行程单加载完成');
+			initMap();
+			
+			// 绑定按钮事件
+			document.getElementById('showRoute1').addEventListener('click', function() { showRoute(0); });
+			document.getElementById('showRoute2').addEventListener('click', function() { showRoute(1); });
+			document.getElementById('showRoute3').addEventListener('click', function() { showRoute(2); });
+			document.getElementById('showRoute4').addEventListener('click', function() { showRoute(3); });
+			document.getElementById('showRoute5').addEventListener('click', function() { showRoute(4); });
+			document.getElementById('showRoute6').addEventListener('click', function() { showRoute(5); });
+			document.getElementById('showAll').addEventListener('click', function() { showAllRoutes(); });
+			document.getElementById('openInApp').addEventListener('click', function() { openInAmap(); });
+		});
+	</script>
+</body>
+
+</html>

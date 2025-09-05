@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游攻略合集 - 首页</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-bg: #fff;
+            --bg-color: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15mm;
+            padding-bottom: 5mm;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .destination-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .destination-card h2::before {
+            content: "📍";
+        }
+
+        .destination-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .tips-card h2::before {
+            content: "💡";
+        }
+
+        .diet-card h2::before {
+            content: "🍽️";
+        }
+
+        .template-card h2::before {
+            content: "📝";
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+        }
+
+        @media print {
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            
+            .destination-card:hover {
+                transform: none;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .page {
+                width: auto;
+                margin: 0;
+                padding: 10mm;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>旅游攻略合集</h1>
+            <p>探索中国美丽风景，规划完美旅程</p>
+        </div>
+        
+        <div class="content">
+            <div class="destination-card">
+                <h2>贵州旅游攻略</h2>
+                <p>详细规划2025年十一贵州6日游行程，包含黄果树瀑布、荔波小七孔、西江千户苗寨等著名景点的游览安排、交通指南和美食推荐。</p>
+                <a href="gzTravel.html" class="btn">查看攻略</a>
+            </div>
+            
+            <div class="destination-card">
+                <h2>湖北旅游攻略</h2>
+                <p>精心设计的湖北6日游行程，涵盖恩施大峡谷、三峡大坝、神农架等自然奇观，以及武汉、宜昌等城市的人文景观。</p>
+                <a href="hbTravel.html" class="btn">查看攻略</a>
+            </div>
+            
+            <div class="destination-card">
+                <h2>山东旅游攻略</h2>
+                <p>五天时间深度游览山东，从济南的泉水到青岛的海滨风光，再到泰山的雄伟壮观，体验齐鲁大地的文化底蕴。</p>
+                <a href="sdTravel.html" class="btn">查看攻略</a>
+            </div>
+            
+            <div class="destination-card">
+                <h2>昆明旅游攻略</h2>
+                <p>春城昆明6日游详细规划，包括滇池、石林、九乡等自然景观，以及丰富的民族文化体验和特色美食介绍。</p>
+                <a href="kmTravel.html" class="btn">查看攻略</a>
+            </div>
+            
+            <div class="destination-card tips-card">
+                <h2>旅游小贴士</h2>
+                <p>通用旅游建议和技巧，包括行前准备、旅途安全、住宿选择、交通出行等方面的实用建议。</p>
+                <a href="travel_tips.html" class="btn">查看详情</a>
+            </div>
+            
+            <div class="destination-card diet-card">
+                <h2>旅游饮食规划</h2>
+                <p>旅途中的饮食安排和建议，包含营养搭配、地方特色美食推荐、饮食安全注意事项等内容。</p>
+                <a href="diet_plan.html" class="btn">查看详情</a>
+            </div>
+            
+            <div class="destination-card template-card">
+                <h2>行程模板</h2>
+                <p>可自定义的旅游行程模板，可根据个人需求调整目的地、时间安排和活动内容，帮助您规划专属旅程。</p>
+                <a href="travel_itinerary_template.html" class="btn">使用模板</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 旅游攻略合集 | 精心规划每一次旅程</p>
+        </div>
+    </div>
+</body>
+</html>
